@@ -6,7 +6,7 @@ import prisma from '@/lib/prisma'
 import { Phone, CheckCircle2, MessageSquare } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: { id: string }

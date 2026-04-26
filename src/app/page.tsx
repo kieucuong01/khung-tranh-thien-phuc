@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm'
 import ProductCard from '@/components/ProductCard'
 import { Metadata } from 'next'
 
-export const revalidate = 3600 // Cập nhật lại mỗi giờ, tự động purge khi có thay đổi dữ liệu
+export const dynamic = 'force-dynamic' // Cập nhật lại mỗi giờ, tự động purge khi có thay đổi dữ liệu
 
 export const metadata: Metadata = {
   title: 'Khung Tranh Thiên Phúc | Nghệ Thuật Khung Tranh Cao Cấp',

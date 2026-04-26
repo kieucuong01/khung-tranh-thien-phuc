@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 interface PageProps {
   params: { id: string }
