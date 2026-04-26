@@ -159,8 +159,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 <div className="space-y-4">
                   {relatedProducts.map(rp => (
                     <Link href={`/san-pham/${rp.id}`} key={rp.id} className="flex gap-4 group items-center">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-border">
-                        <img src={rp.image_url} alt={rp.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                      <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 border border-border relative">
+                        <Image src={rp.image_url} alt={rp.title} fill className="object-cover group-hover:scale-110 transition-transform" />
                       </div>
                       <div>
                         <h4 className="font-bold text-sm text-foreground group-hover:text-primary transition-colors line-clamp-1">{rp.title}</h4>

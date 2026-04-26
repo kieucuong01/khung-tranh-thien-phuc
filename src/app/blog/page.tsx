@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const revalidate = 3600
 
@@ -44,11 +45,13 @@ export default async function BlogPage() {
                   key={blog.id} 
                   className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border flex flex-col"
                 >
-                  <div className="aspect-[16/9] overflow-hidden">
-                    <img 
+                  <div className="aspect-[16/9] overflow-hidden relative">
+                    <Image 
                       src={blog.image_url} 
                       alt={blog.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">

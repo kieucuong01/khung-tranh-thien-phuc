@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
+import Image from 'next/image'
 
 export const revalidate = 3600
 
@@ -87,8 +88,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
           
           {/* Article Body */}
           <article className="lg:w-2/3">
-            <div className="rounded-2xl overflow-hidden mb-10 shadow-lg border border-border">
-              <img src={blog.image_url} alt={blog.title} className="w-full h-auto" />
+            <div className="rounded-2xl overflow-hidden mb-10 shadow-lg border border-border relative aspect-video">
+              <Image src={blog.image_url} alt={blog.title} fill className="object-cover" priority />
             </div>
             
             <div 
@@ -116,8 +117,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
                   <p className="text-sm text-muted-foreground">Đang cập nhật...</p>
                 ) : recentPosts.map((post) => (
                   <Link href={`/blog/${post.id}`} key={post.id} className="group flex gap-4 items-start">
-                    <div className="w-20 h-16 rounded-lg overflow-hidden shrink-0 border border-border">
-                      <img src={post.image_url} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    <div className="w-20 h-16 rounded-lg overflow-hidden shrink-0 border border-border relative">
+                      <Image src={post.image_url} alt="" fill className="object-cover group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
                       <h4 className="font-bold text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-snug">
