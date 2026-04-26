@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  title       String
+  category    String
+  price       Int
+  image_url   String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  name        String
+  role        String
+  text        String
+  createdAt   DateTime @default(now())
+}
+
+model GalleryImage {
+  id          String   @id @default(uuid())
+  image_url   String
+  title       String?  // Tiêu đề hoặc mô tả ngắn
+  category    String   @default("Dự án") // Phân loại: VD "Khung Gỗ", "Khung Bằng Khen", "Dự án lớn"
+  createdAt   DateTime @default(now())
+}
+
+model ContactRequest {
+  id          String   @id @default(uuid())
+  name        String
+  phone       String
+  serviceType String   // e.g., "go", "composite", "theu", "khac"
+  notes       String?
+  status      String   @default("pending") // "pending" or "contacted"
+  createdAt   DateTime @default(now())
+}
+
+model Blog {
+  id          String   @id @default(uuid())
+  title       String
+  excerpt     String
+  content     String
+  image_url   String
+  createdAt   DateTime @default(now())
+}
+
+model PriceItem {
+  id          String   @id @default(uuid())
+  category    String   // e.g., "Khung Gỗ Sồi", "Khung Composite"
+  description String?  // e.g., "Bản 3-5cm, sơn màu theo yêu cầu"
+  size        String   // e.g., "30x40"
+  price       Int
+  createdAt   DateTime @default(now())
+}
