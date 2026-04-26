@@ -4,19 +4,26 @@ import prisma from '@/lib/prisma'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://khungtranhthienphuc.vn' // Thay bằng domain thật khi deploy
 
-  // Fetch dynamic routes
-  const products = await prisma.product.findMany({ select: { id: true } })
-  const blogs = await prisma.blog.findMany({ select: { id: true } })
+  // Fetch dynamic routes with error handling for build time
+  let productUrls: any[] = []
+  let blogUrls: any[] = []
 
-  const productUrls = products.map((p) => ({
-    url: `${baseUrl}/san-pham/${p.id}`,
-    lastModified: new Date(),
-  }))
+  try {
+    const products = await prisma.product.findMany({ select: { id: true } })
+    const blogs = await prisma.blog.findMany({ select: { id: true } })
 
-  const blogUrls = blogs.map((b) => ({
-    url: `${baseUrl}/blog/${b.id}`,
-    lastModified: new Date(),
-  }))
+    productUrls = products.map((p) => ({
+      url: `${baseUrl}/san-pham/${p.id}`,
+      lastModified: new Date(),
+    }))
+
+    blogUrls = blogs.map((b) => ({
+      url: `${baseUrl}/blog/${b.id}`,
+      lastModified: new Date(),
+    }))
+  } catch (error) {
+    console.error('Sitemap build-time database connection skipped')
+  }
 
   return [
     {
