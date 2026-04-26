@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Blog Nghệ Thuật Khung Tranh | Thiên Phúc',

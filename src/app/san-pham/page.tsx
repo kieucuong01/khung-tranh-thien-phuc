@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import ProductCard from '@/components/ProductCard'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Bộ Sưu Tập Khung Tranh Thiên Phúc',
