@@ -41,17 +41,15 @@ export default function Navbar() {
               Thiên Phúc
             </span>
             <span className="text-[11px] text-muted-foreground font-medium italic">
-              Khung Tranh & Nghệ Thuật
+              Kế toán & Kiểm toán Chuyên nghiệp
             </span>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Trang Chủ</Link>
-            <Link href="/san-pham" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Sản Phẩm</Link>
-            <Link href="/bang-gia" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Bảng Giá</Link>
-            <Link href="/thu-vien" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Thư Viện</Link>
-            <Link href="/blog" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Blog</Link>
+            <Link href="/gioi-thieu" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Giới Thiệu</Link>
+            <Link href="/dich-vu" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Dịch Vụ</Link>
+            <Link href="/tin-tuc" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Tin Tức</Link>
             <Link href="/#contact" className="text-[15px] font-semibold text-foreground hover:text-primary transition-colors">Liên Hệ</Link>
           </nav>
 
@@ -80,10 +78,9 @@ export default function Navbar() {
           <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-border shadow-lg">
             <nav className="flex flex-col p-4 space-y-4">
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Trang Chủ</Link>
-              <Link href="/san-pham" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Sản Phẩm</Link>
-              <Link href="/bang-gia" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Bảng Giá</Link>
-              <Link href="/thu-vien" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Thư Viện</Link>
-              <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Blog</Link>
+              <Link href="/gioi-thieu" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Giới Thiệu</Link>
+              <Link href="/dich-vu" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Dịch Vụ</Link>
+              <Link href="/tin-tuc" onClick={() => setMobileMenuOpen(false)} className="font-semibold border-b pb-2">Tin Tức</Link>
               <div className="flex items-center gap-3 pt-2">
                 <div className="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center">
                   <Phone size={18} fill="currentColor" />

@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ["latin", "vietnamese"], variable: "--font-inter"
 const playfair = Playfair_Display({ subsets: ["latin", "vietnamese"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://khungtranhthienphuc.vn'),
+  metadataBase: new URL('https://ketoanthienphuc.vn'),
   title: {
-    template: '%s | Khung Tranh Thiên Phúc',
-    default: 'Khung Tranh Thiên Phúc | Nghệ Thuật Khung Tranh Cao Cấp',
+    template: '%s | Kế Toán & Kiểm Toán Thiên Phúc',
+    default: 'Kế Toán Thiên Phúc | Dịch Vụ Kế Toán, Kiểm Toán & Thuế Chuyên Nghiệp',
   },
-  description: "Xưởng đóng khung tranh Thiên Phúc chuyên gia công khung gỗ sồi, khung composite, đóng tranh thêu, tranh đính đá giá rẻ, uy tín nhất TP.HCM. Gia công nhanh 24h.",
+  description: "Dịch vụ kế toán, kiểm toán và tư vấn thuế uy tín tại TP.HCM. Chuyên nghiệp, bảo mật và tận tâm. Hỗ trợ doanh nghiệp tối ưu chi phí và minh bạch tài chính.",
   authors: [{ name: 'Thiên Phúc' }],
-  keywords: ['khung tranh', 'đóng khung tranh', 'khung tranh gỗ', 'khung composite', 'khung tranh hồ chí minh', 'xưởng khung tranh'],
+  keywords: ['kế toán', 'kiểm toán', 'dịch vụ kế toán', 'tư vấn thuế', 'thành lập doanh nghiệp', 'báo cáo tài chính'],
   robots: 'index, follow',
   alternates: {
     canonical: '/',
@@ -25,23 +25,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
-    url: 'https://khungtranhthienphuc.vn',
-    siteName: 'Khung Tranh Thiên Phúc',
-    title: 'Khung Tranh Thiên Phúc | Nghệ Thuật Khung Tranh Cao Cấp',
-    description: 'Chuyên gia công khung tranh gỗ tự nhiên và composite cao cấp tại HCM. Thiết kế miễn phí, gia công nhanh.',
+    url: 'https://ketoanthienphuc.vn',
+    siteName: 'Kế Toán Thiên Phúc',
+    title: 'Kế Toán Thiên Phúc | Dịch Vụ Kế Toán & Thuế Chuyên Nghiệp',
+    description: 'Chuyên cung cấp dịch vụ kế toán, kiểm toán cao cấp tại HCM. Giải pháp tài chính toàn diện cho doanh nghiệp.',
     images: [
       {
-        url: '/og-image.jpg', // Cần thêm file này vào folder public sau
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Khung Tranh Thiên Phúc',
+        alt: 'Kế Toán Thiên Phúc',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Khung Tranh Thiên Phúc',
-    description: 'Xưởng đóng khung tranh uy tín nhất TP.HCM',
+    title: 'Kế Toán Thiên Phúc',
+    description: 'Dịch vụ kế toán & kiểm toán uy tín nhất TP.HCM',
   },
 };
 

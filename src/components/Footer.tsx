@@ -14,11 +14,11 @@ export default function Footer() {
                 Thiên Phúc
               </span>
               <span className="text-[11px] text-accent font-medium italic">
-                Khung Tranh & Nghệ Thuật
+                Kế toán & Kiểm toán Chuyên nghiệp
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              Mỗi chiếc khung, mỗi đường cắt đều là một tác phẩm nghệ thuật được tạo nên từ tâm huyết và sự tinh tế. ✨
+              Đồng hành cùng sự phát triển bền vững của doanh nghiệp thông qua các giải pháp kế toán, thuế và tài chính tối ưu. ✨
             </p>
           </div>
 
@@ -43,17 +43,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Products */}
+          {/* Column 3: Navigation */}
           <div>
             <h3 className="text-white font-serif text-lg font-bold mb-6">
-              Sản Phẩm
+              Liên Kết
             </h3>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">Khung Gỗ Sồi Cao Cấp</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Khung Gỗ Thông Tự Nhiên</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Khung Nhựa Composite</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Khung Tranh Sơn Dầu</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Bảng Giá Đóng Khung</Link></li>
+              <li><Link href="/gioi-thieu" className="hover:text-white transition-colors">Giới Thiệu</Link></li>
+              <li><Link href="/dich-vu" className="hover:text-white transition-colors">Dịch Vụ</Link></li>
+              <li><Link href="/tin-tuc" className="hover:text-white transition-colors">Tin Tức & Sự Kiện</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors">Liên Hệ Tư Vấn</Link></li>
             </ul>
           </div>
 
@@ -61,7 +60,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 text-center text-xs text-gray-500">
-          <p>&copy; 2026 Khung Tranh Thiên Phúc. All rights reserved.</p>
+          <p>&copy; 2026 Kế toán Thiên Phúc. All rights reserved.</p>
         </div>
       </div>
     </footer>

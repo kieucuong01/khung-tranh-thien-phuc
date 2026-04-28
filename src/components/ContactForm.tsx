@@ -50,15 +50,16 @@ export default function ContactForm() {
         </div>
         <div>
           <select name="serviceType" className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent bg-secondary/20 text-sm text-foreground">
-            <option value="Tư vấn chung">Vui lòng chọn loại khung...</option>
-            <option value="Khung gỗ tự nhiên">Khung gỗ tự nhiên</option>
-            <option value="Khung nhựa composite">Khung nhựa composite</option>
-            <option value="Đóng khung tranh thêu">Đóng khung tranh thêu</option>
+            <option value="Tư vấn chung">Vui lòng chọn dịch vụ...</option>
+            <option value="Thành lập doanh nghiệp">Thành lập doanh nghiệp</option>
+            <option value="Kế toán trọn gói">Kế toán trọn gói</option>
+            <option value="Quyết toán thuế">Quyết toán thuế</option>
+            <option value="Đăng ký đầu tư">Đăng ký đầu tư</option>
             <option value="Dịch vụ khác">Dịch vụ khác</option>
           </select>
         </div>
         <div>
-          <textarea name="notes" rows={4} placeholder="Mô tả yêu cầu (kích thước, số lượng, mẫu mã...)" className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent bg-secondary/20 text-sm resize-none"></textarea>
+          <textarea name="notes" rows={4} placeholder="Mô tả yêu cầu của bạn..." className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent bg-secondary/20 text-sm resize-none"></textarea>
         </div>
         
         {status.type === 'error' && (
@@ -70,7 +71,7 @@ export default function ContactForm() {
           disabled={status.type === 'loading'}
           className="w-full bg-accent hover:bg-primary text-white font-bold py-4 rounded-lg transition-colors shadow-md text-sm uppercase tracking-wider mt-2 disabled:opacity-50"
         >
-          {status.type === 'loading' ? 'Đang gửi...' : 'Gửi Yêu Cầu Báo Giá'}
+          {status.type === 'loading' ? 'Đang gửi...' : 'Nhận Tư Vấn Miễn Phí'}
         </button>
       </div>
     </form>

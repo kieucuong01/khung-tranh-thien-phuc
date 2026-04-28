@@ -2,23 +2,23 @@ import { MetadataRoute } from 'next'
 import prisma from '@/lib/prisma'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://khungtranhthienphuc.vn' // Thay bằng domain thật khi deploy
+  const baseUrl = 'https://ketoanthienphuc.vn' // Thay bằng domain thật khi deploy
 
   // Fetch dynamic routes with error handling for build time
-  let productUrls: any[] = []
-  let blogUrls: any[] = []
+  let serviceUrls: any[] = []
+  let newsUrls: any[] = []
 
   try {
-    const products = await prisma.product.findMany({ select: { id: true } })
+    const services = await prisma.service.findMany({ select: { slug: true } })
     const blogs = await prisma.blog.findMany({ select: { id: true } })
 
-    productUrls = products.map((p) => ({
-      url: `${baseUrl}/san-pham/${p.id}`,
+    serviceUrls = services.map((s) => ({
+      url: `${baseUrl}/dich-vu/${s.slug}`,
       lastModified: new Date(),
     }))
 
-    blogUrls = blogs.map((b) => ({
-      url: `${baseUrl}/blog/${b.id}`,
+    newsUrls = blogs.map((b) => ({
+      url: `${baseUrl}/tin-tuc/${b.id}`,
       lastModified: new Date(),
     }))
   } catch (error) {
@@ -33,24 +33,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${baseUrl}/san-pham`,
+      url: `${baseUrl}/gioi-thieu`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/dich-vu`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/tin-tuc`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/bang-gia`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    ...productUrls,
-    ...blogUrls,
+    ...serviceUrls,
+    ...newsUrls,
   ]
 }

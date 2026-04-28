@@ -47,12 +47,28 @@ model ContactRequest {
 }
 
 model Blog {
-  id          String   @id @default(uuid())
-  title       String
-  excerpt     String
-  content     String
-  image_url   String
-  createdAt   DateTime @default(now())
+  id                    String    @id @default(uuid())
+  slug                  String?   @unique
+  title                 String
+  excerpt               String
+  content               String    @db.Text
+  image_url             String
+  image_alt             String?
+  category              String    @default("Tin tức")
+  author                String?   @default("Thiên Phúc")
+  read_time             String?   @default("5 phút đọc")
+  meta_title            String?
+  meta_description      String?
+  schema_type           String    @default("Article") // Article, FAQ, HowTo
+  faq_items             Json?     // List of {q, a}
+  howto_steps           Json?     // List of {name, text, image}
+  featured_product_ids  String[]  @default([])
+  cta_text              String?   @default("Nhận tư vấn miễn phí")
+  cta_link              String?   @default("/#contact")
+  tags                  String[]  @default([])
+  is_published          Boolean   @default(true)
+  published_at          DateTime  @default(now())
+  createdAt             DateTime  @default(now())
 }
 
 model PriceItem {
@@ -62,4 +78,25 @@ model PriceItem {
   size        String   // e.g., "30x40"
   price       Int
   createdAt   DateTime @default(now())
+}
+
+model Service {
+  id                    String    @id @default(uuid())
+  title                 String
+  slug                  String    @unique
+  category              String    // e.g., "Kế toán", "Thuế", "Đăng ký kinh doanh"
+  description           String
+  content               String    @db.Text
+  iconName              String    // Lucide icon name
+  image_url             String
+  featured              Boolean   @default(false)
+  
+  // SEO & Optimization fields
+  meta_title            String?
+  meta_description      String?
+  is_published          Boolean   @default(true)
+  published_at          DateTime  @default(now())
+  related_service_ids   String[]  @default([])
+  
+  createdAt             DateTime  @default(now())
 }
